@@ -11,10 +11,16 @@ app_config: AppConfig = load_config()
 
 class DatabaseManager:
     def __init__(self, config: DatabaseConfig = app_config.database):
+        """
+        Initialize the DatabaseManager with the given database configuration.
+
+        :param config: The database configuration settings. Defaults to the
+                   application database configuration.
+         :type config: DatabaseConfig
+        """
         self.config = config
 
     def get_connection(self):
-        
         """
         Establish a connection to the database.
 
@@ -22,13 +28,13 @@ class DatabaseManager:
         :raises Exception: If there is a problem connecting to the database.
         """
         try:
-           session = psycopg2.connect(
-            host=self.config.host,
-            port=self.config.port,
-            database=self.config.database,
-            user=self.config.user,
-            password=self.config.password,
-        )
+            session = psycopg2.connect(
+                host=self.config.host,
+                port=self.config.port,
+                database=self.config.database,
+                user=self.config.user,
+                password=self.config.password,
+            )
         except Exception as e:
             logger.exception(f"Error connecting to database: {str(e)}")
             raise Exception(f"Error connecting to database: {str(e)}")
@@ -81,7 +87,5 @@ class DatabaseManager:
             except Exception as e:
                 logger.exception(f"Error creating indexes: {str(e)}")
 
-           
-            
         conn.commit()
         conn.close()

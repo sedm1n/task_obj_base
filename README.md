@@ -1,16 +1,24 @@
 #Test Task: Employee Directory Console Application
 
-A console-based application for managing an employee directory with PostgreSQL integration. The application supports various functionalities, such as creating tables, adding employee records, listing all employees, generating test data, searching by criteria, and optimizing performance.
+This console-based application provides efficient management of an employee directory, integrating seamlessly with PostgreSQL to support core functionalities essential for database-driven environments. Key features include:
 
-Installation and Setup
+Database Management: Set up and manage tables within PostgreSQL, ensuring structured storage for employee data.
+Employee Records: Add, update, and list employee records with ease, providing a user-friendly interface for data management.
+Data Generation: Generate test data automatically, facilitating testing and demonstration of the application.
+Search and Filtering: Search employees based on specific criteria, leveraging optimized queries to ensure quick retrieval.
+Performance Optimization: Enhanced filtering speed by creating a composite index on the gender and full_name fields. This improvement reduced filtering times from 0.1604 seconds to 0.1329 seconds, yielding a performance improvement of 20.67%.
+This project demonstrates an emphasis on optimization and scalability, making it a robust solution for managing employee information in various organizational contexts.
+
+
+##Installation and Setup
 Prerequisites
 Python 3.11 or higher
 PostgreSQL installed and running
 
 
-Installation
+##Installation
 
-Install dependencies:
+###Install dependencies:
 
 ```bash
 
